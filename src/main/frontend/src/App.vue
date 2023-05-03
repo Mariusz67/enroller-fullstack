@@ -11,7 +11,8 @@
       <meetings-page :username="authenticatedUsername"></meetings-page>
     </div>
     <div v-else>
-      <login-form @login="login($event)"></login-form>
+
+     <login-form @login="login($event)"></login-form>
     </div>
   </div>
 </template>
@@ -20,12 +21,14 @@
     import "milligram";
     import LoginForm from "./LoginForm";
     import MeetingsPage from "./meetings/MeetingsPage";
+    import Vue from "vue";
 
     export default {
         components: {LoginForm, MeetingsPage},
         data() {
             return {
                 authenticatedUsername: ""
+
             };
         },
         methods: {
@@ -34,7 +37,9 @@
             },
             logout() {
                 this.authenticatedUsername = '';
-            }
+            },
+
+
         }
     };
 </script>
